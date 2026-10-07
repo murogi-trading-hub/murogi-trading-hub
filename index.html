@@ -1,45 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Murogi Trading Hub - Live Bot</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body{background:#0f172a;color:white;font-family:Arial;text-align:center;padding:20px}
-.card{background:#1e293b;padding:20px;border-radius:15px;max-width:400px;margin:20px auto}
-button{background:#22c55e;color:white;border:none;padding:15px 30px;border-radius:10px;font-weight:bold;font-size:18px;width:100%;margin-top:10px}
-input{width:90%;padding:12px;border-radius:8px;border:none;margin:10px 0}
-.live{color:#22c55e;font-weight:bold}
-</style>
+  <title>Murogi Trading Hub - Live Bot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body{background:#0f172a;color:white;font-family:Arial;text-align:center;padding:20px}
+    .card{background:#1e293b;padding:20px;border-radius:15px;max-width:400px;margin:20px auto}
+    button{background:#22c55e;color:white;border:none;padding:15px 30px;border-radius:10px;font-weight:bold;font-size:18px;width:100%;margin-top:10px}
+    input{width:90%;padding:12px;border-radius:8px;border:none;margin:10px 0}
+    .live{color:#22c55e;font-weight:bold}
+  </style>
 </head>
 <body>
-<h1>🚀 MUROGI TRADING HUB</h1>
-<p class="live">● LIVE BOT - App ID:<p class="live">● LIVE BOT - App ID: 34BJRfyhHrplKbTyon9wf</p>
-<div class="card">
-<h3>Connect Deriv Account</h3>
-<input id="token" placeholder="Paste Deriv API Token here">
-<button onclick="connect()">CONNECT & START TRADING</button>
-<p id="status">Not Connected</p>
-</div>
-
-<input id="token" placeholder="Paste Deriv API Token here">
-<button onclick="connect()">CONNECT & START TRADING</button>
-<p id="status">Not Connected</p>
-</div>
-<div class="card">
-<h3>Market: Volatility 100</h3>
-<p>Balance: $<span id="bal">0.00</span></p>
-<button onclick="trade('CALL')">BUY RISE ▲</button>
-<button style="background:#ef4444" onclick="trade('PUT')">BUY FALL ▼</button>
-</div>
-<script>
-function connect(){
-let t=document.getElementById('token').value;
-if(t.length<10){alert('Paste valid token');return}
-document.getElementById('status').innerText='Connected! Balance loading...';
-document.getElementById('bal').innerText='10,245.50';
-alert('Connected! Bot Ready. App ID  Active');
-}
-function trade(type){alert(type+' trade placed! $1 stake on V100');}
-</script>
+  <h1>🚀 MUROGI TRADING HUB</h1>
+  <p class="live">● LIVE BOT - App ID: 34BJRfyhHrplKbTyon9wf</p>
+  <div class="card">
+    <h3>Connect Deriv Account</h3>
+    <input id="token" placeholder="Paste Deriv API Token here">
+    <button onclick="connect()">CONNECT & START TRADING</button>
+    <p id="status">Not Connected</p>
+  </div>
+  <div class="card">
+    <h3>Market: Volatility 100</h3>
+    <p>Balance: $<span id="bal">0.00</span></p>
+    <button onclick="trade('CALL')">BUY RISE ▲</button>
+    <button style="background:#ef4444" onclick="trade('PUT')">BUY FALL ▼</button>
+  </div>
+  <script>
+    const APP_ID = '34BJRfyhHrplKbTyon9wf';
+    function connect(){
+      let t=document.getElementById('token').value;
+      if(t.length<10){alert('Paste valid token');return}
+      document.getElementById('status').innerText='Connected! Balance loading...';
+      document.getElementById('bal').innerText='10,245.50';
+      alert('Connected! Bot Ready. App ID Active');
+    }
+    function trade(type){alert(type+' trade placed! $1 stake on V100');}
+  </script>
 </body>
 </html>
