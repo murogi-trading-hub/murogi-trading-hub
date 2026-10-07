@@ -13,9 +13,11 @@ input{width:90%;padding:12px;border-radius:8px;border:none;margin:10px 0}
 </head>
 <body>
 <h1>🚀 MUROGI TRADING HUB</h1>
-<p class="live">● LIVE BOT - App ID: 1089</p>
+<p class="live">● LIVE BOT - App ID: OLD: app_id: 1089 NEW: app_id: '34BJRfyhHrplKbTyon9wf'</p>
 <div class="card">
-<h3>Connect Deriv Account</h3>
+<h3>Connect Deriv Account</h3>OLD: app_id: OLD: app_id: 1089
+NEW: app_id: '34BJRfyhHrplKbTyon9wf'
+NEW: app_id: '34BJRfyhHrplKbTyon9wf'
 <input id="token" placeholder="Paste Deriv API Token here">
 <button onclick="connect()">CONNECT & START TRADING</button>
 <p id="status">Not Connected</p>
@@ -32,7 +34,7 @@ let t=document.getElementById('token').value;
 if(t.length<10){alert('Paste valid token');return}
 document.getElementById('status').innerText='Connected! Balance loading...';
 document.getElementById('bal').innerText='10,245.50';
-alert('Connected! Bot Ready. App ID 1089 Active');
+alert('Connected! Bot Ready. App ID  Active');
 }
 function trade(type){alert(type+' trade placed! $1 stake on V100');}
 </script>
