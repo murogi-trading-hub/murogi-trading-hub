@@ -32,7 +32,7 @@
       let t=document.getElementById('token').value;
       if(t.length<10){alert('Paste valid token');return}
       document.getElementById('status').innerText='Connected! Balance loading...';
-      document.getElementById('bal').innerText='10,245.50';
+      const app_id='34BJRfyhHrplKbTyon9wf';const ws=new WebSocket('wss://ws.derivws.com/websockets/v3?app_id='+app_id);ws.onopen=()=>{const urlParams=new URLSearchParams(window.location.search);const token1=urlParams.get('token1');const token=token1||localStorage.getItem('deriv_token');if(token)ws.send(JSON.stringify({authorize:token}));else{document.getElementById('bal').innerText='Please Login to Deriv';}};ws.onmessage=(e)=>{const data=JSON.parse(e.data);if(data.msg_type==='authorize'){ws.send(JSON.stringify({balance:1,subscribe:1}));localStorage.setItem('deriv_token',data.authorize.loginid);}if(data.msg_type==='balance'){document.getElementById('bal').innerText=data.balance.currency+' '+data.balance.balance;}};
       alert('Connected! Bot Ready. App ID Active');
     }
     function trade(type){alert(type+' trade placed! $1 stake on V100');}
